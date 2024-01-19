@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mothers BD Recharge</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="welcome_to_morning_teer_today">Welcome to morning teer today</string>
+    <string name="baseUrl">http://mothersbdsoft.com/</string>
+    <string name="find_your_work_service_here">Mothers BD Recharge</string>
+    <string name="motherbdsoftwware">Mothers BD software</string>
+    <!--  <string name="baseUrl">https://allwellbuy.com/</string>-->
+</resources>
