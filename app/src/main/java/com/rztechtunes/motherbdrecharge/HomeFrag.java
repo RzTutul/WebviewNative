@@ -24,6 +24,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -61,6 +62,7 @@ public class HomeFrag extends Fragment {
     private ValueCallback<Uri[]> file_path;
     private final static int file_req_code = 1;
     private ValueCallback<Uri[]> fileChooserCallback;
+    SwipeRefreshLayout mySwipeRefreshLayout;
 
     public HomeFrag() {
         // Required empty public constructor
@@ -78,6 +80,7 @@ public class HomeFrag extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         webView = view.findViewById(R.id.webview);
+        mySwipeRefreshLayout = view.findViewById(R.id.swipeContainer);
 
 
         Bundle bundle = getArguments();
@@ -196,6 +199,16 @@ public class HomeFrag extends Fragment {
 
             }
         });
+
+        mySwipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        webView.reload();
+                        mySwipeRefreshLayout.setRefreshing(false);
+                    }
+                }
+        );
 
         // You can create external class extends with WebChromeClient
         // Taking WebViewClient as inner class
