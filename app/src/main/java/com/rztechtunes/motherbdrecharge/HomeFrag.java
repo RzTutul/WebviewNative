@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
 import android.net.MailTo;
 import android.net.Uri;
 import android.os.Build;
@@ -19,6 +20,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -137,8 +139,12 @@ public class HomeFrag extends Fragment {
         webView.requestFocus();
 
 
-        ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Loading...");
+        LayoutInflater factory = LayoutInflater.from(getContext());
+        final View deleteDialogView = factory.inflate(R.layout.custom_dialog, null);
+        final AlertDialog progressDialog = new AlertDialog.Builder(getContext()).create();
+        progressDialog.setView(deleteDialogView);
+        progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
         progressDialog.show();
 
         webView.setWebViewClient(new WebViewClient() {

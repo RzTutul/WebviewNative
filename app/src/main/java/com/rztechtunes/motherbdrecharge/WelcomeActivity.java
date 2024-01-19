@@ -34,7 +34,6 @@ public class WelcomeActivity extends AppCompatActivity {
 //        binding.arrow.setAnimation(this.animation);
         animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blur);
         animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blur);
-        binding.nightteer.setAnimation(this.animation);
         new Thread(new Runnable() {
             public void run() {
                 doWork();
@@ -59,7 +58,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void doWork() {
         this.progress = 1;
-        while (this.progress <= 1) {
+        while (this.progress <= 2) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.agrawalsuneet.loaderspack.loaders.FidgetLoader
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fidget_animDuration="3000"
+        app:fidget_bodyColor="@color/teal_200"
+        app:fidget_fidgetRadius="30dp"
+        android:backgroundTint="@color/white"
+        app:fidget_interpolator="@android:anim/accelerate_decelerate_interpolator"
+        app:fidget_noOfRotation="3"
+        app:fidget_sideCirclesColor="@android:color/darker_gray" />
+
+</LinearLayout>
